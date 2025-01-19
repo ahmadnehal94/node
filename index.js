@@ -1,5 +1,5 @@
 const result = require("./app");
-const fs = require("fs");
+//const fs = require("fs");
 /*
 const greeting = (req, res) => {
   res.writeHead(200, { "Content-type": "applicationjson" });
@@ -21,7 +21,7 @@ if (input[2] == "add") {
 }
 
 */
-
+/*
 const path = require("path");
 const dirPath = path.join(__dirname, "files", "xfile");
 console.log(dirPath);
@@ -38,3 +38,9 @@ fs.readdir(dirPath, (err, file) => {
     console.log("file...", i);
   });
 });
+*/
+const fs = require("fs");
+const path = require("path");
+const dirPath = path.join(__dirname, "crud");
+
+console.log(dirPath);
