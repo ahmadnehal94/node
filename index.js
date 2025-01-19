@@ -39,8 +39,32 @@ fs.readdir(dirPath, (err, file) => {
   });
 });
 */
+/*
 const fs = require("fs");
 const path = require("path");
 const dirPath = path.join(__dirname, "crud");
 
 console.log(dirPath);
+*/
+
+/* Lecture 16 Promices*/
+
+let x = 100;
+let y = 0;
+
+console.log(x + y);
+
+setTimeout(() => {
+  y = 200;
+}, 3000);
+
+let z = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(200);
+  });
+});
+
+z.then((data) => {
+  y = data;
+  console.log(x + y);
+});
