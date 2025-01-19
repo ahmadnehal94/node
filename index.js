@@ -48,7 +48,7 @@ console.log(dirPath);
 */
 
 /* Lecture 16 Promices*/
-
+/*
 let x = 100;
 let y = 0;
 
@@ -68,3 +68,22 @@ z.then((data) => {
   y = data;
   console.log(x + y);
 });
+
+*/
+
+/*Lec 18 Express JS*/
+
+const express = require("express");
+const app = express();
+
+app.get("", (req, res) => {
+  res.send("Welcome to Home page");
+});
+
+app.get("/about", (req, res) => {
+  res.send("This is about Page");
+});
+app.get("/help", (req, res) => {
+  res.send("This is help Page");
+});
+app.listen(2000);
