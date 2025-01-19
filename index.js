@@ -72,7 +72,7 @@ z.then((data) => {
 */
 
 /*Lec 18 Express JS*/
-
+/*
 const express = require("express");
 const app = express();
 
@@ -86,4 +86,17 @@ app.get("/about", (req, res) => {
 app.get("/help", (req, res) => {
   res.send("This is help Page");
 });
+
+app.listen(2000);
+*/
+
+/*Lec 19 Routing Params*/
+const express = require("express");
+const app = express();
+
+app.get("", (req, res) => {
+  res.send("Hello...." + req.query.name);
+  console.log("name = ", req.query.name);
+});
+
 app.listen(2000);
