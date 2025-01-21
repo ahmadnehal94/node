@@ -91,6 +91,7 @@ app.listen(2000);
 */
 
 /*Lec 19 Routing Params*/
+/*
 const express = require("express");
 const app = express();
 
@@ -100,3 +101,47 @@ app.get("", (req, res) => {
 });
 
 app.listen(2000);
+
+*/
+
+/*Lec 20 Render HTML a7 JSON*/
+
+/*
+const express = require("express");
+const app = express();
+
+app.get("", (req, res) => {
+  res.send("<h1> This is Home</h1><br> <a href='/about'>Go to About Page</a>");
+});
+
+app.get("/about", (req, res) => {
+  res.send("[{name:'nehal', age:28},{name:'ahmad', age:21}]");
+});
+
+app.get("/html", (req, res) => {
+  res.send(
+    `<input type="text" placeholder="enter name" value=${req.query.name} />
+    <br>
+    <a href="/">Go to home page</a>
+    `
+  );
+});
+app.listen(2000);
+
+*/
+
+/* Lec 30 Connet Mongo DB with Node*/
+const { MongoClient } = require("mongodb");
+const url = "mongodb://localhost:27017";
+const database = "e_comm";
+const client = new MongoClient(url);
+
+async function getData() {
+  let result = await client.connect();
+  let db = await result.db(database);
+  let collection = await db.collection("products");
+  let response = await collection.find({}).toArray();
+  console.log(response);
+}
+
+getData();
