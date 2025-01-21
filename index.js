@@ -131,17 +131,12 @@ app.listen(2000);
 */
 
 /* Lec 30 Connet Mongo DB with Node*/
-const { MongoClient } = require("mongodb");
-const url = "mongodb://localhost:27017";
-const database = "e_comm";
-const client = new MongoClient(url);
 
-async function getData() {
-  let result = await client.connect();
-  let db = await result.db(database);
-  let collection = await db.collection("products");
-  let response = await collection.find({}).toArray();
-  console.log(response);
-}
+const dbConnect = require("./mongodb");
+const main = async () => {
+  let data = await dbConnect();
+  data = await data.find({}).toArray();
+  console.log(data);
+};
 
-getData();
+main();
